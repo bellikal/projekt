@@ -21,3 +21,7 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+public/assets/.DS_Store
+public/assets/user.jpg
+public/.DS_Store
+.DS_Store
