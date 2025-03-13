@@ -11,20 +11,16 @@
 {{--    <x-header.header></x-header.header>--}}
 {{--    <x-sidenav.sidenav></x-sidenav.sidenav>--}}
 
-    <div class="bg-white w-full h-full p-48">
-        <div class=" w-fit grid grid-cols-2 gap-2">
-            <x-button >Button</x-button>
-            <x-button disabled >Button</x-button>
+    <div class="bg-slate-50 w-full h-full p-48">
+        <x-form-grid>
+            <x-form-grid>
+                <x-input label="First Name" name="first_name" />
+                <x-input label="Last Name" name="last_name" />
+                <x-input label="Email" name="email" />
+                <x-input label="Phone" name="phone" />
+            </x-form-grid>
 
-            <x-button secondary >Button</x-button>
-            <x-button disabled secondary >Button</x-button>
-
-            <x-button outline >Button</x-button>
-            <x-button disabled outline >Button</x-button>
-
-            <x-button danger >Button</x-button>
-            <x-button disabled danger >Button</x-button>
-        </div>
+        </x-form-grid>
 
     </div>
 
