@@ -21,7 +21,7 @@
     <body class="font-sans antialiased">
 
             <!-- Page Content -->
-            <main class="h-screen">
+            <main class="h-screen bg-slate-50">
                 {{ $slot }}
             </main>
     </body>
