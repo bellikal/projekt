@@ -9,11 +9,11 @@
         3 => 'text-lg font-semibold',
         4 => 'text-lg font-regular',
         5 => 'text-base font-semibold',
-        6 => 'text-base font-regular',
+        6 => 'text-base',
     ];
     $class = $twClasses[$size];
 @endphp
 
-<{{ $heading }} class="{{ $class }} text-slate-800">
-{{ $slot }}
+<{{ $heading }} {{ $attributes->merge(['class' => $class . ' text-slate-800 my-1.5']) }}>
+    {{ $slot }}
 </{{ $heading }}>
