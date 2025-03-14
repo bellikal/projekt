@@ -1,10 +1,16 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Mail\TestEmail;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/send-test-email', function () {
+    Mail::to('belliz@me.com')->send(new TestEmail());
+    return 'Email wurde gesendet';
 });
 
 Route::get('/dashboard', function () {
