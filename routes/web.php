@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Mail\TestEmail;
+use App\Models\User;
+use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -26,6 +29,27 @@ Route::post('/invite', function (Request $request) {
 
 Route::get('/email', function () {
     return view('user-invitation');
+});
+
+Route::get('/test-password-reset', function (Request $request) {
+    $user = User::where('email', 'belli@bundesweit.digital')->first();
+
+    if ($user) {
+        Password::sendResetLink(['email' => $user->email]);
+        return "Password reset link sent on your email id.";
+    } else {
+        return 'user not found';
+    }
+});
+
+Route::get('/test-verification', function () {
+    $user = User::where('email', 'belli@bundesweit.digital')->first();
+    if ($user) {
+        $user->notify(new VerifyEmail);
+        return "Verifizierungs-Mail gesendet!";
+    } else {
+        return "Benutzer nicht gefunden.";
+    }
 });
 
 
