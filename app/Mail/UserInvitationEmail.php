@@ -52,9 +52,6 @@ class UserInvitationEmail extends Mailable
      */
     public function attachments(): array
     {
-        return [
-            Attachment::fromPath(public_path('assets/mail.png'))
-                ->withMime('image/png'),
-        ];
+        return [];
     }
 }

@@ -1,4 +1,6 @@
-<x-emails-layout title="Einladung zu {{ config('app.name') }}">
+<x-emails-layout
+    title="Einladung zu {{ config('app.name') }}"
+    illustration="https://raw.githubusercontent.com/bellikal/projekt/main/public/assets/mail.png">
     <div style="padding: 2rem;">
         <p style="font-size: 1.5rem; font-weight: 700; line-height: 1.6; margin: 0 0 1.5rem 0; text-align: center;">
             Du wurdest zu <span style="color: #FC7D27">{{ config('app.name') }}</span> eingeladen!<br>
@@ -9,7 +11,7 @@
         </p>
 
         <div style="text-align: center; margin: 3rem;">
-            <a href="url('/set-password?token=' . ($token ?? 'fantasy-token'))" style="display: inline-block; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; font-size: 1rem; color: #ffffff; background-color: #334155; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <a href="{{ url('/set-password?token=' . ($token ?? 'fantasy-token')) }}" style="display: inline-block; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; font-size: 1rem; color: #ffffff; background-color: #334155; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
                 Passwort festlegen
             </a>
         </div>
